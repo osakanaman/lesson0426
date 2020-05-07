@@ -1,8 +1,7 @@
 <?php
 
-
 function fizzbuzz($c,$d) {
-    for ($i=1; $i<=100; $i++) {
+    for ($i=1; $i <= 100; $i++) {
         if ($i % ($c*$d) === 0) {
             echo 'FizzBuzz'.PHP_EOL;
         } elseif ($i % $c === 0) {
@@ -14,6 +13,6 @@ function fizzbuzz($c,$d) {
         }
     }
 }
-fizzbuzz(7,9);
+fizzbuzz(3,5);
 
 ?>
