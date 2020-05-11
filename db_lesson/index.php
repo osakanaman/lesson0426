@@ -1,14 +1,16 @@
 <?php
 
-/*fisermanテーブル表示*/
+/*fisermanテーブル表示、JOIN*/
 try {
 
   $dbh = new PDO("mysql:host=127.0.0.1; dbname=lesson01; charset=utf8", 'hoge', 'hogehoge');
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $sql = "SELECT * FROM fiserman";
+  // $sql = "SELECT * FROM fiserman";
+  // $sql = "SELECT * FROM fish";
+  $sql = "SELECT * FROM fish RIGHT OUTER JOIN fiserman ON fish.id =  fiserman.fish_id";
   $stmt = $dbh->query($sql);
   foreach ($stmt as $row) {
-    echo $row['id'] . ':' . $row['name']. ':' . $row['fish_caught']. ':' .$row['date'] ."\n";
+    echo $row['id'] . ':' . $row['name']. ':' . $row['fish_caught']. ':' . $row['type']. ':'.$row['date'] ."\n";
   }
 
 } catch (PDOException $e) {
@@ -33,6 +35,7 @@ try {
 //   echo $e->getMessage();
 //   exit;
 // }
+
 
 ?>
 
