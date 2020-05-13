@@ -7,22 +7,13 @@
    インデックスページ
 @endsection
 
+
 @section('content')
    <p>ここが本文のコンテンツです。</p>
-   <p>必要なだけ記述できます。</p>
-  
-   @component('components.message')
-       @slot('msg_title')
-       CAUTION!
-       @endslot
-
-       @slot('msg_content')
-       これはメッセージの表示です。
-       @endslot
-   @endcomponent
-
+   <p>Controller value<br>{{$message}}</p>
+   <p>ViewComposer value<br>{{$view_message}}</p>
 @endsection
-
+  
 
 @section('footer')
 copyright 2020 tuyano.
