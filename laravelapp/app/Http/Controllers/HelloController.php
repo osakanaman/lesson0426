@@ -8,17 +8,25 @@ use Illuminate\Http\Response;
 class HelloController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
 {
-//    return view('hello.index', ['message'=>'Hello!']);
+   return view('hello.index');
+}
+
+
+
+    // public function index()
+
+// {
+// //    return view('hello.index', ['message'=>'Hello!']);
 
 //    $message = 'Goodmorning';
 //    return view('hello.index',compact('message'));
 
-   $sample = 'Hello';
-   return view('hello.index')->with('message',$sample);
+//    $sample = 'Hello';
+//    return view('hello.index')->with('message',$sample);
 
-}
+// }
 
     // public function index()
     // {
